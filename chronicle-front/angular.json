@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "chronicle-front"
+  "defaultProject": "chronicle-front",
+  "cli": {
+    "analytics": "dc38e9e0-a3cb-4278-9fd1-3f3bf72608fe"
+  }
 }

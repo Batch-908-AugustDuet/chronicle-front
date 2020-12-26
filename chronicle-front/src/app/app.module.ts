@@ -8,12 +8,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UploadPageComponent } from './components/upload-page/upload-page.component';
+import { UploadFileComponent } from './components/pages/upload-file/upload-file.component';
+import { UploadService } from './services/upload.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    UploadPageComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatSliderModule
   ],
-  providers: [],
+  providers: [UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
