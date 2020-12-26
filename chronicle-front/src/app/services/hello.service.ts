@@ -15,7 +15,6 @@ export class HelloService {
 
   //private var token = '';
 
-
   //This is how it is done to grab respone data from posts
   httpOptions: any = {
     headers: new HttpHeaders({
@@ -23,9 +22,7 @@ export class HelloService {
       'Content-Type': 'application/json'
     }),
     observe: 'response'
-  };
-
- 
+  }; 
 
   getHello(token: any): Observable<any> {
 
@@ -38,10 +35,6 @@ export class HelloService {
 
 
     console.log(this.http.get<any>(this.helloUrl, {headers: headers}));
-    return this.http.get<any>(this.helloUrl, {headers: headers, responseType: 'text'});
-  }
-  
-
-
-
+    return this.http.get<any>(this.helloUrl/*, {headers: headers, responseType: 'text'}*/);
+}
 }
