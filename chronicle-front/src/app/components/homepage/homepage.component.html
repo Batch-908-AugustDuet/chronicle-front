@@ -1,2 +1,6 @@
 <p>homepage works!</p>
 <app-login></app-login>
+
+<br/><br/><br/>
+<h4 *ngIf="token">{{token}}</h4>
+<button *ngIf="token"(click)="getHello();">Get Hello</button>

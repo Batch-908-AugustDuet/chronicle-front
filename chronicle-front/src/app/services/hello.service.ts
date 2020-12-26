@@ -34,7 +34,7 @@ export class HelloService {
     console.log(headers);
 
 
-    console.log(this.http.get<any>(this.helloUrl, {headers: headers}));
-    return this.http.get<any>(this.helloUrl/*, {headers: headers, responseType: 'text'}*/);
+    console.log(this.http.get(this.helloUrl, {headers: headers}));
+    return this.http.get(this.helloUrl, {headers: headers, responseType: 'text'});
 }
 }
