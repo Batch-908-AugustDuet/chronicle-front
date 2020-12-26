@@ -11,7 +11,7 @@ export class HelloService {
   constructor(private http: HttpClient) { }
 
 
-  private helloUrl = 'http://localhost:8080/hello';
+  private helloUrl = 'http://localhost:8080/ROOT_war/hello';
 
   //private var token = '';
 
@@ -38,7 +38,7 @@ export class HelloService {
 
 
     console.log(this.http.get<any>(this.helloUrl, {headers: headers}));
-    return this.http.get<any>(this.helloUrl, {headers: headers});
+    return this.http.get<any>(this.helloUrl, {headers: headers, responseType: 'text'});
   }
   
 

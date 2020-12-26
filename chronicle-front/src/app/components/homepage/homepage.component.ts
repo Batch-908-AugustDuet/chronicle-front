@@ -94,7 +94,11 @@ export class HomepageComponent implements OnInit {
     
 
     this.helloService.getHello(this.token)
-    .subscribe(data => {console.log(data), console.log("this also should be getting called")});
+    .subscribe(data => {
+      console.log(data);
+      console.log("this also should be getting called");
+      alert(data);
+    });
 
 
 

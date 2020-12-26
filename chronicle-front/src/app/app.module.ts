@@ -18,13 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 var firebaseConfig = {
-  apiKey: "AIzaSyC0-bDLBHeSIVzq2HblBWhaEjAQM1vj4Tw",
-  authDomain: "test-a0bf1.firebaseapp.com",
-  projectId: "test-a0bf1",
-  storageBucket: "test-a0bf1.appspot.com",
-  messagingSenderId: "512874803586",
-  appId: "1:512874803586:web:2ead92cb69b4b8345b1f9b",
-  measurementId: "G-BEDMWJEGEF"
+    apiKey: "AIzaSyDZL7W8P1U8NpJqrrmg2xK5v64IY4ENoBM",
+    authDomain: "test-45893.firebaseapp.com",
+    projectId: "test-45893",
+    storageBucket: "test-45893.appspot.com",
+    messagingSenderId: "972879800190",
+    appId: "1:972879800190:web:c74120c0f651e7df5d352f",
+    measurementId: "G-HYDMTGR40H"
 };
 
 
@@ -90,7 +90,6 @@ const firebaseUiAuthConfig2: firebaseui.auth.Config = {
     MatSliderModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     HttpClientModule
-
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
