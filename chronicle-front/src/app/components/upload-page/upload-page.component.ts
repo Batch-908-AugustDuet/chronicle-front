@@ -7,12 +7,19 @@ import { UploadService } from 'src/app/services/upload.service';
   styleUrls: ['./upload-page.component.css']
 })
 export class UploadPageComponent implements OnInit {
-  toFile;
+  fileToUpload: File = null;
 
   constructor(private uploadService: UploadService) { }
 
   ngOnInit(): void {
   }
+  /*
+  
+  */
+ handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+}
+
   submit(){
     const file = this.toFile.item(0);
     this.uploadService.uploadFile(file);
