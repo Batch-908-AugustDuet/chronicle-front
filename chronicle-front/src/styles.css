@@ -4,13 +4,19 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/* CSS styles for view video and notes */
 .center-chips {
     /* is there a better way to center the chips? */
     margin: auto;
     width: 50%;    
   }
-/* Add application styles & imports to this file! */
 
+.video {
+    width: 75em; 
+    height: auto;
+  }
+
+/* Add application styles & imports to this file! */
 h2.page-title{
     text-align: center;
     margin-top: 26px;
