@@ -1,9 +1,10 @@
 <div style="margin-left: 4em; margin-right: 4em;">
-  <!--(How have we not added titles!)-->
-  <h2 style="text-align: center; margin-top: 1em;">Video Title</h2> <!--{{video?.title}}-->
+  <!--(Are we gonna add titles? if so how?)-->
+  <h2 style="text-align: center; margin-top: 1em;">Video Title</h2>
+  <!--{{video?.title}}-->
 
-  <div class ="center-chips" style="margin-bottom: 1em;"> <!--Mayber it'd look best left aligned-->
-    <!-- <h4>Tags:</h4> (best with no heading I think)-->
+  <div class="center-chips" style="margin-bottom: 1em;">
+    <!--Mayber it'd look best left aligned-->
     <mat-chip-list aria-label="Tags">
       <div :*ngFor="let tag of video?.tags">
         <mat-chip>{{tag.value}}</mat-chip>
@@ -11,18 +12,27 @@
     </mat-chip-list>
   </div>
 
-  <!-- <div class="video center-chips" :*ngIf=video>
+  <div :*ngIf=video>
+    <app-vjsplayer
+      [options]="{fluid: false, height: 360, width : 640, muted : false, autoplay: false, playbackRates:[0.5, 1, 2], sources: [{ src: video.url, type: 'video/mp4' }]}">
+    </app-vjsplayer>
+  </div>
+
+  <!-- let's put the description at the bottom -->
+  <p style="text-align: center; margin-top: 1em;">{{video?.description}}</p>
+
+</div>
+
+
+<!-- old mat chip list (seems to be the same as the one above) -->
+<!-- <h4>Tags</h4>
+<mat-chip-list aria-label="Tags">
+  <div :*ngFor="let tag of video?.tags"><mat-chip>{{tag.value}}</mat-chip></div>
+</mat-chip-list> -->
+
+<!-- this is the old video player -->
+<!-- <div class="video center-chips" :*ngIf=video>
     <app-vjsplayer
       [options]="{fluid: true, aspectRatio: '16:9', autoplay: true, sources: [{ src: video.url, type: 'video/mp4' }]}">
     </app-vjsplayer>
   </div> -->
-<h2>{{video?.description}}</h2>
-
-<div :*ngIf= video >
-  <app-vjsplayer [options]="{fluid: false, height: 360, width : 640, muted : false, autoplay: false, playbackRates:[0.5, 1, 2], sources: [{ src: video.url, type: 'video/mp4' }]}"></app-vjsplayer>
-</div>
-
-<h4>Tags</h4>
-<mat-chip-list aria-label="Tags">
-  <div :*ngFor="let tag of video?.tags"><mat-chip>{{tag.value}}</mat-chip></div>
-</mat-chip-list>
