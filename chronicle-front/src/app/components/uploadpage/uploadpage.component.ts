@@ -5,6 +5,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UploadService } from 'src/app/services/upload.service';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Tag } from 'src/app/models/Tag';
+import { TagPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-uploadpage',
@@ -19,6 +21,10 @@ export class UploadpageComponent implements OnInit {
   creationDate: Date = new Date();
   subject: string = "";
   uploadFile: File | any;
+  tagList: Array<Tag> = [];
+  tagName: string = ""; // might not stay
+  tagVal: string = ""; // might not stay
+  counter: number = 0; // temporary possible solution for id
 
   selectedFiles!: FileList;
   currentFile: File | any;
@@ -39,6 +45,25 @@ export class UploadpageComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
+  addTag() {
+    let newTag = {
+     tagid: this.counter.toString(), // this might be removed from the model
+      name: this.tagName,
+      value: this.tagVal
+    }
+    this.tagList.push(newTag);
+    console.log(this.tagList);
+    this.tagName = '';
+    this.tagVal = '';
+    this.counter += 1;
+  }
+
+// need a way to populate this
+// if we have a list of tags, why return list of tags?
+  populateTagList(...args: Tag[]){
+    return {...args};
+  }
+
   /*
   SelectedFiles is used to access the current file as our first item, and then call uploadService.upload()
   on our cuurentFile.
@@ -54,9 +79,9 @@ export class UploadpageComponent implements OnInit {
     const dataObj = {
       description: this.description,
       date: this.creationDate,
-      user: this.createdBy
-      //tags will have to be integrated into this dataObj. I am not sure how to do so without first implementing the tags in the form.
-      //fortunately, we don't really need tags for the http request to work.
+      user: this.createdBy,
+      //tagList: this.populateTagList()
+      tagList: this.tagList
     }
 
     this.currentFile = this.selectedFiles.item(0);

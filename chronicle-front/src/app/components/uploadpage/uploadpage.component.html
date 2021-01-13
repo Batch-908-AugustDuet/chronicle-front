@@ -17,12 +17,21 @@
     <label for="file-date">Date:</label>
     <input type="date" id="file-date" name="file-date" [(ngModel)]="creationDate" required>
 
+    <!-- BEGINNING OF CLAY TRYING THINGS -->
     <!-- This is where tags should be inserted into the upload file form-->
-
+    <label for="tag-name">Tag Name:</label>
+    <input type="text" id="tag-name" name="tag-name" [(ngModel)]="tagName" required>
+    <label for="tag-val">Tag Value:</label>
+    <input type="text" id="tag-val" name="tag-val" [(ngModel)]="tagVal" required>
 
     <label class="btn btn-default">
     <input type="file" (change)="selectFile($event)" />
   </label>
+
+    <button class="btn btn-tag" (click)="addTag()">
+        Add Tag
+    </button>
+<!-- END OF CLAY TRYING THINGS -->
 
     <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
     Upload
