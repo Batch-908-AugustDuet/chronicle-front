@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { Router } from '@angular/router';
@@ -18,7 +19,8 @@ describe('NavbarComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule,
-                AngularFireModule.initializeApp(environment.firebaseConfig)
+                AngularFireModule.initializeApp(environment.firebaseConfig),
+                HttpClientModule
             ],
             declarations: [NavbarComponent],
         })
